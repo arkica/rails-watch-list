@@ -1,0 +1,15 @@
+<h1><%= @list.name %></h1>
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item">
+      <%= bookmark.comment %>
+      <%= link_to "Remove",
+                  bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "All lists", lists_path(@lists) %>
+<%= link_to 'Leave a comment!', new_list_bookmark_path(@list) %>
+
