@@ -1,6 +1,12 @@
-<ul>
+<h1 class="text-center">Name</h1>
+<div class="d-flex justify-content-center">
+  <ul>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
   <% end %>
 </ul>
-<%= link_to "Create a list", new_list_path(@list)%>
+</div>
+<p class="text-center">
+  <%= link_to "Create a list", new_list_path(@list)%>
+</p>
+

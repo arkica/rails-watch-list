@@ -1,5 +1,6 @@
-<h1><%= @list.name %></h1>
-<ul class="list-group">
+<h1 class="text-center"><%= @list.name %></h1>
+<div class="text-center">
+  <ul class="list-group">
   <% @list.bookmarks.each do |bookmark| %>
     <li class="list-group-item">
       <%= bookmark.comment %>
@@ -10,6 +11,9 @@
     </li>
   <% end %>
 </ul>
-<%= link_to "All lists", lists_path(@lists) %>
-<%= link_to 'Leave a comment!', new_list_bookmark_path(@list) %>
+</div>
+<div class="text-center">
+  <%= link_to "All lists", lists_path(@lists) %>
+  <%= link_to 'Leave a comment!', new_list_bookmark_path(@list) %>
+</div>
 
